@@ -14,12 +14,19 @@
     <?php  include ('header.php'); ?>
 
         <form class="container pt-3 pb-3" action="index.php" method="GET" name="fillter">
+            
             <div class="price d-flex align-items-center justify-content-center">
+                
                 <span style="padding-right: 8px;">Цена от: </span>
+                
                 <input style='width: 100px' class="form-control" type="number" name="min">
+                
                 <span style="padding: 0 10px;"> до </span>
+                
                 <input style='width: 100px' class="form-control " type="number" name="max">
+                
                 <input style='width: 400px; margin-left: 40px' class="form-control" name="name" type="text" placeholder="Название товара">
+                
                 <select style='width: 200px; margin-left: 40px' class="form-select" name="avtors" aria-label="Default select example">
                     <option selected value="0">Автор:</option>
                     <option value="1">Демидович Б.</option>
