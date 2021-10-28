@@ -70,7 +70,7 @@ $query = "SELECT books.id, books.img, books.name, avtors.avtors as avtors, books
                 
 
 $i = 0;
-    while ($myrow = mysql_fetch_array($result)) {
+    while ($myrow = mysql_fetch_assoc($result)) {
         $i++;
         echo "<tr><th scope='row'><img src='" . $myrow["img"] . "' style='width: 80px'></th>
              <td>" . $myrow['name'] . "</td>
