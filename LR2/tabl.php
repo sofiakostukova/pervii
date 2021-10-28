@@ -29,7 +29,7 @@ $query = "SELECT books.id, books.img, books.name, avtors.avtors as avtors, books
                 $query .= " WHERE books.id_avtors = '" . mysqli_real_escape_string($mysql,$_GET["avtors"]) . "'";
             }
             $check = true;
-            echo "Автор: " . $brandArray[$_GET["avtors"] - 1] . "<br>";
+            echo "Автор: " . $avtorsArray[$_GET["avtors"] - 1] . "<br>";
         }
 
         if ($_GET["min"] != "") {
