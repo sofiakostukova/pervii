@@ -6,57 +6,6 @@ $query = "select books.img, books.name, books.description, books.cost, avtors.na
           INNER JOIN avtors ON books.id_avtors=avtors.id";
 
 $binds = [];
-$name1= (int)$_GET['name1'];
-$name1 = htmlspecialchars($name1);
-$name = $_GET['name'];
-$name = htmlspecialchars($name);
-/*$cost = (int)$_GET['cost'];
-$cost = htmlspecialchars($cost);*/
-$flag = false;
-
-if(!key_exists('clearfilter', $_GET)){
-    if (count($_GET)>0 && ($name !=""||$name1!=0/*||$cost!=0*/)) {
-        $query .= " WHERE ";
-        if ($name1) {
-            $query .= "books.id_avtors = :name1";
-            $binds['$name1'] = $name1;
-            $flag = true;
-        }
-        if ($name) {
-            if ($flag) {
-                bindss($name, " AND books.name LIKE %:name%", 'name');
-                $query .= " AND books.name LIKE %:name%";
-                $binds['name'] = $name;
-            } else {
-                bindss($name, "books.name LIKE %:name%", 'name');
-                $query .= "books.name LIKE %:name%";
-                $binds['name'] = $name;
-                $flag = true;
-            }
-        }
-      /*  if ($cost) {
-            if ($flag) {
-                $query .= " AND books.cost = :cost";
-                $binds['cost'] = $cost;
-            } else {
-                $query .= "books.cost = :cost";
-                $binds['cost'] = $cost;
-                $flag = true;
-            }
-            if ($_GET["min"] != "") {
-                $query .= " AND books.cost >= " . intval($_GET["min"]);
-            }
-
-            if ($_GET["max"] != "") {
-                $query .= " AND books.cost <= " . intval($_GET["max"]);
-            }
-        }*/
-    }
-
-}
-
-/*
-$binds = [];
 $nameofavtors= (int)$_GET['nameofavtors'];
 $nameofavtors = htmlspecialchars($nameofavtors);
 $nameofbooks = $_GET['nameofbooks'];
@@ -98,7 +47,7 @@ if(!key_exists('clearfilter', $_GET)){
         }
     }
 
-}*/
+}
 
 var_dump($query);
 
