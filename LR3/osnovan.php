@@ -73,7 +73,7 @@ $avtorsFor = getTableFdb();
             <tr>
                 <th scope="row">
                     <img src='<?=$row["img"]?>' width='200' alt=''>
-                    <img src="logic_all/img_protect.php?img=<?=$row["img"] ?>" class = "imgcheck">
+              
                 </th>
                 <th scope="row">
                     <?=$row["name"] ?>
