@@ -13,15 +13,18 @@ $usererr = "";
 $passerror = 0;
 
 if(isset($_POST['loginin'])){
+    
     $time = time();
     $stmt = $connection->prepare("SELECT * FROM `users` WHERE Email LIKE '%${Email}%'");
     $stmt->execute();
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if($result>0){
+        
         if($result['Password'] != $Password && $Password != md5($salt)){
             $passerr = "Неверный пароль";
             $_SESSION['errors']++;
+            
         }
 
         if($Password == md5($salt)){
