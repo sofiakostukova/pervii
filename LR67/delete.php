@@ -2,7 +2,9 @@
 require_once 'logic_all/logictable.php';
 
 $id_books = htmlspecialchars($_GET['id']);
-$data = $obj->getById($id_books);
+$img_name = htmlspecialchars($_GET['img_name']);
+
+$data = $obj->delete($id_books,$img_name);
 
 if(!$data){ die("У пользователя некорректный id"); }
 ?>
