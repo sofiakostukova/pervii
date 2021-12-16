@@ -16,7 +16,7 @@ public function showData(){
         $query = "select books.id, books.img, books.name, books.description, books.cost, avtors.name1
         from books
         inner join avtors on books.id_avtors = avtors.id 
-        order by books.id";
+        where books.id";
 
 $q = $this->connect->prepare($query) or die("ОШИБКА ЧТЕНИЯ ЗАПИСЕЙ!");
 $q->execute();
@@ -28,7 +28,7 @@ public function getById($id){
     $query = "select books.id, books.img, books.name, books.description, books.cost, avtors.name1, avtors.id
         from books
         inner join avtors on books.id_avtors = avtors.id 
-        order by books.id = :id";
+        where books.id = :id";
 
 $q = $this->connect->prepare($query);
 $q->execute(array(':id'=>$id));
