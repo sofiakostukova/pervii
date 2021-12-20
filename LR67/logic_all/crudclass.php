@@ -79,7 +79,7 @@ public function delete($id, $img_name){
 $sql="DELETE FROM books WHERE id=:id";
 $q = $this->connect->prepare($sql);
 $q->execute(array(':id'=>$id));
-unlink($_SERVER['DOCUMENT_ROOT']. "/img/" . $img_name);
+unlink($_SERVER['DOCUMENT_ROOT']. '/img/' . $img_name);
 
 var_dump($img_name);
 
@@ -108,7 +108,7 @@ else{
 
    public function uploadfile($file){
         $name = mt_rand(0, 999) . $file['name'];
-        copy($file['tmp_name'], "img/" . $name);
+        copy($file['tmp_name'], 'img/' . $name);
         return $name;
     }
 public function getplaces(){
