@@ -27,7 +27,7 @@ require_once 'logic_all/logictable.php';
                     <tr>
                     <tr>
                         <td><?=$row[0]?></td>
-                        <th scope="row"><img src="<?php echo $row[1]?>" class = "imgcheck" width='200'></th>
+                        <th scope="row"><img src="img/<?php echo $row[1]?>" class = "imgcheck" width='200'></th>
                         <td><?=$row[2]?></td>
                         <th><?=$row[5]?></th>
                         <td><?=$row[3]?></td>
