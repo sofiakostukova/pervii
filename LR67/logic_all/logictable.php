@@ -4,13 +4,18 @@ require_once 'database.php';
 
 
 $obj = new clas();
+
 $conn = new database();
+
 $obj->getconnectdb($conn->connect());
 
 
 $books['name_of_books'] = htmlspecialchars($_POST['name_of_books']);
+
 $books['name_of_avtors'] = htmlspecialchars($_POST['name_of_avtors']);
+
 $books['annotation'] = htmlspecialchars($_POST['annotation']);
+
 $books['price'] = htmlspecialchars($_POST['price']);
 
 
@@ -19,21 +24,25 @@ if(isset($_POST['creating'])||(isset($_POST['editing']))) {
 
     if ($books['name_of_books'] == "") {
         $arrayerrors['errbooks'] = 'Заполните название книги';
+        
         $erroscheck++;
     }
 
     if ($books['name_of_avtors'] == "0") {
         $arrayerrors['erravtors'] = 'Выберите автора';
+        
         $erroscheck++;
     }
 
     if ($books['annotation'] == "") {
         $arrayerrors['errannotation'] = 'Заполните описание книги';
+        
         $erroscheck++;
     }
 
     if ($books['price'] == "" && $books['price'] != 0) {
         $arrayerrors['errprice'] = 'Введите цену книги';
+        
         $erroscheck++;
     }
 
@@ -43,6 +52,7 @@ if(isset($_POST['creating'])||(isset($_POST['editing']))) {
 
     if ($checkimg != "ок") {
         $arrayerrors['errimg'] = $checkimg;
+        
         $erroscheck++;
     }
 
