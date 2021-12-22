@@ -3,7 +3,7 @@ require_once 'logic_all/logictable.php';
 
 $row = $obj->getavtors();
 
-if(!$row){ die('В базе данных отсутствуют места захоронения'); }
+if(!$row){ die('В бд отсутствуют места захоронения'); }
 
 ?>
 
